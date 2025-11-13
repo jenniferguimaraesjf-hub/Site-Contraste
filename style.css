@@ -1,0 +1,1047 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #f5f1e5;
+    color: #000000;
+}
+
+/* ========== HEADER ========== */
+#header{
+  width: 100%; 
+  height: auto;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.container{
+    padding: 10px 5%;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logo - branca por padrão (sobre slider) */
+.logo{
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+/* Links - brancos por padrão (sobre slider) */
+nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* ========== QUANDO ROLA PARA STÚDIO ========== */
+#header.scrolled {
+    background: rgba(245, 241, 229, 0.98);
+}
+
+#header.scrolled .logo {
+    color: #000000 !important;
+}
+
+#header.scrolled nav ul li a {
+    color: #000000 !important;
+}
+
+#header.scrolled nav ul li a::after {
+    background: #a58d46;
+}
+
+/* ========== SLIDER HOME ========== */
+#home {
+    margin-top: 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+    color: #fff;
+}
+
+.slide-content h2 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.slide-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* SETAS DE NAVEGAÇÃO */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 100;
+}
+
+.slider-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* INDICADORES */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 100;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #fff;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ========== SEÇÃO PROJETOS ========== */
+#projetos{
+    padding: 80px 0;
+    background: #f5f1e5;
+}
+
+.section-title{
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #000000;
+}
+
+.projetos-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.projeto-card{
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover{
+    transform: translateY(-10px);
+}
+
+.projeto-img{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.projeto-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projeto-card:hover .projeto-img img{
+    transform: scale(1.05);
+}
+
+/* Overlay que aparece ao passar o mouse */
+.projeto-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projeto-card:hover .projeto-overlay{
+    opacity: 1;
+}
+
+.ver-mais{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Informações do projeto */
+.projeto-info{
+    padding: 0 10px;
+}
+
+.projeto-titulo{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.projeto-descricao{
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.projeto-meta{
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.projeto-meta span{
+    text-transform: uppercase;
+}
+
+/* Texto vertical "RECENT" nas laterais */
+.projetos-grid::before,
+.projetos-grid::after{
+    content: 'RECENTE';
+    position: absolute;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #ccc;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.projetos-grid::before{
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.projetos-grid::after{
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Container com posição relativa para os "RECENT" */
+#projetos .container{
+    position: relative;
+}
+
+/* ========== RESPONSIVE PROJETOS ========== */
+@media (max-width: 1024px) {
+    .projetos-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos-grid{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .section-title{
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .projeto-img{
+        height: 300px;
+    }
+    
+    .projetos-grid::before,
+    .projetos-grid::after{
+        display: none;
+    }
+}
+
+/* ========== SEÇÃO STÚDIO ========== */
+#STÚDIO{
+    padding: 80px 0;
+    color: #000000;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Centraliza verticalmente */
+    flex-wrap: wrap;
+}
+
+.STÚDIO-col-1 img {
+    width: 100%;
+    max-width: 600px; 
+    height: auto;
+    border-radius: 0px;
+}
+
+.STÚDIO-col-1{
+    flex-basis: 45%;
+}
+
+.STÚDIO-col-2{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centraliza horizontalmente todo o conteúdo */
+}
+
+.sub-title{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Linha abaixo do título SOBRE */
+.sub-title::after{
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.STÚDIO-col-2 p{
+    font-size: 15px;
+    line-height: 1.8;
+    color: #000000;
+    text-align: justify;
+    margin-bottom: 25px;
+    margin-top: 30px;  /* Espaço após a linha */
+    max-width: 100%;
+}
+
+.STÚDIO-col-2 p:first-of-type{
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #STÚDIO{
+        padding: 60px 0;
+    }
+    
+    .STÚDIO-col-1, .STÚDIO-col-2 {
+        flex-basis: 100%;
+    }
+    
+    .STÚDIO-col-1{
+        margin-bottom: 40px;
+    }
+    
+    .sub-title{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .STÚDIO-col-2 p{
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+
+/* ========== SEÇÃO CONTATO ========== */
+#contato{
+    padding: 80px 0;
+    color: #000000;
+    background: #f5f1e5;
+}
+
+#contato .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contato-col-1{
+    flex-basis: 55%;
+    text-align: center;
+}
+
+.contato-col-2{
+    flex-basis: 40%;
+}
+
+.contato-col-2 img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 0px;
+}
+
+/* Título CONTATO -  */
+.contato-col-1 .sub-title{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Linha abaixo do título CONTATO */
+.contato-col-1 .sub-title::after{
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contato-col-1 > p{
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto 40px auto;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.contato-info{
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.info-item{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-item h3{
+    font-size: 16px;  /* Mesmo tamanho do título SOBRE */
+    font-weight: 600;
+    color: #a58d46;
+    margin-bottom: 8px;
+    letter-spacing: 3px;  /* Mesmo espaçamento */
+    text-transform: uppercase;
+}
+
+.info-item p{
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.social-links{
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.social-links a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.social-links a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #a58d46;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.social-links a:hover{
+    color: #a58d46;
+}
+
+.social-links a:hover::after{
+    width: 100%;
+}
+
+/* Responsive para CONTATO */
+@media (max-width: 768px) {
+    #contato{
+        padding: 60px 0;
+    }
+    
+    .contato-col-1, .contato-col-2 {
+        flex-basis: 100%;
+    }
+    
+    .contato-col-1{
+        margin-bottom: 40px;
+    }
+    
+    .social-links{
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 10px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    .slide-content h2 {
+        font-size: 24px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
+
+    .slider-nav {
+        padding: 0 20px;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .STÚDIO-col-1, .STÚDIO-col-2 {
+        flex-basis: 100%;
+    }
+}
+
+/* ========== SEÇÃO E-BOOKS ========== */
+
+/* Hero com busca */
+#ebooks-hero{
+    background: #a58d46;
+    padding: 100px 0 60px 0;
+    margin-top: 80px;
+}
+
+#ebooks-hero h1{
+    color: #000000;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.search-box{
+    display: flex;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-box input{
+    flex: 1;
+    padding: 15px 30px;
+    border: none;
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-box button{
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover{
+    background: #333;
+}
+
+/* Conteúdo dos E-books */
+#ebooks-content{
+    padding: 80px 0;
+    background: #f5f1e5;
+}
+
+.ebooks-title{
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    color: #000000;
+}
+
+.topics-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+.topic-column{
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 40px;
+}
+
+.topic-title{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.ebooks-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ebooks-list li{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ebooks-list li:last-child{
+    border-bottom: none;
+}
+
+.ebooks-list li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: block;
+}
+
+.ebooks-list li a:hover{
+    color: #a58d46;
+}
+
+.read-more{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.read-more:hover{
+    color: #a58d46;
+}
+
+.read-more .arrow{
+    width: 20px;
+    height: 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.read-more:hover .arrow{
+    background: #a58d46;
+}
+
+/* ========== RESPONSIVE E-BOOKS ========== */
+@media (max-width: 768px) {
+    #ebooks-hero{
+        padding: 80px 0 40px 0;
+    }
+    
+    #ebooks-hero h1{
+        font-size: 24px;
+    }
+    
+    .search-box{
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    
+    .search-box button{
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .ebooks-title{
+        font-size: 32px;
+    }
+    
+    .topics-grid{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+.no-underline {
+    text-decoration: none !important;
+}
+
+/* ========== PÁGINA DE E-BOOK INDIVIDUAL ========== */
+#ebook-page {
+    padding: 120px 0 80px 0;
+    background: #f5f1e5;
+    min-height: 100vh;
+}
+
+.container-ebook {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #a58d46;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #8a7338;
+}
+
+.ebook-title {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    color: #000000;
+}
+
+.ebook-content {
+    color: #000000;
+    line-height: 1.8;
+}
+
+.ebook-content p {
+    font-size: 16px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.ebook-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.ebook-content strong {
+    font-weight: 600;
+    color: #a58d46;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container-ebook {
+        padding: 0 20px;
+    }
+    
+    .ebook-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .ebook-content h2 {
+        font-size: 22px;
+    }
+    
+    .ebook-content p {
+        font-size: 15px;
+        text-align: left;
+    }
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========== MENU MOBILE ========== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #000000;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Quando o header está sobre o slider (branco) */
+#header:not(.scrolled) .menu-toggle span {
+    background: #ffffff;
+}
+
+/* Animação do menu hambúrguer para X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #f5f1e5;
+        display: flex !important;  /* Força o display flex */
+        flex-direction: column !important;  /* Força coluna */
+        justify-content: center;
+        align-items: center;
+        gap: 40px !important;  /* Espaço entre itens */
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        padding: 0;
+    }
+    
+    nav ul.active {
+        right: 0;
+    }
+    
+    nav ul li {
+        display: block !important;  /* Força block */
+        margin: 0 !important;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        font-size: 18px;
+        color: #000000 !important;
+        display: block;
+        padding: 10px 0;
+    }
+    
+    /* Remove o efeito de linha do hover no mobile */
+    nav ul li a::after {
+        display: none;
+    }
+    
+    /* Overlay escuro quando menu está aberto */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+    }
+}
+
+/* Desktop - menu normal */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+    
+    .menu-overlay {
+        display: none !important;
+    }
+}
+

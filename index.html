@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraste Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<!-- HEADER -->
+<div id="header">
+  <div class="container">
+    <nav>
+      <div class="logo">CONTRASTE DESIGN</div>
+      
+      <!-- Botão hambúrguer (apenas mobile) -->
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#projetos">PROJETOS</a></li>
+        <li><a href="#STÚDIO">STUDIO</a></li>
+        <li><a href="ebooks.html">E-BOOKS</a></li>
+        <li><a href="#contato">CONTATO</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Overlay do menu (apenas mobile) -->
+<div class="menu-overlay"></div>
+  
+    <!-- HOME SLIDER -->
+    <div id="home">
+      <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <img src="Imagens/1.png" alt="Projeto 1">
+          <div class="slide-content">
+            <h2>APARTAMENTO 201</h2>
+            <p>Um apartamento da década de 1980, cheio de memórias e objetos da família, recebeu um projeto que uniu os móveis antigos às novas peças contemporâneas.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <img src="Imagens/2.png" alt="Projeto 2">
+          <div class="slide-content">
+            <h2>UM DESIGN ATEMPORAL</h2>
+            <p>Transformando uma sala de um apartamento antigo em uma obra de arte do design.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <img src="Imagens/3.png" alt="Projeto 3">
+          <div class="slide-content">
+            <h2>APARTAMENTO 201</h2>
+            <p>Os pratos de decoração trazidos de diferentes países pelos clientes foram o ponto de partida para a escolha dos materiais - inclusive o piso da cozinha.</p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+          <img src="Imagens/4.jpg" alt="Projeto 4">
+          <div class="slide-content">
+            <h2>SÍTIO SANTA TEREZINHA</h2>
+            <p>A casa é uma lembrança da arquitetura mineira, com o seu fogão a lenha e telhado colonial.</p>
+          </div>
+        </div>
+
+        <!-- Navegação -->
+        <div class="slider-nav">
+          <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+          <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="slider-dots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+
+<!-- SEÇÃO PROJETOS -->
+    <div id="projetos">
+      <div class="container">
+        <h1 class="section-title">ÚLTIMOS PROJETOS</h1>
+        
+        <div class="projetos-grid">
+          <!-- Projeto 1 -->
+          <a href="projeto1.html" class="projeto-card">
+            <div class="projeto-img">
+              <img src="Imagens/projeto1.jpg" alt="Projeto 1">
+              <div class="projeto-overlay">
+                <span class="ver-mais">Ver Projeto →</span>
+              </div>
+            </div>
+            <div class="projeto-info">
+              <h2 class="projeto-titulo">SÍTIO SANTA TEREZINHA</h2>
+              <p class="projeto-descricao">Entre uma mata recém recuperada, a casa do sítio Santa Terezinha é um gesto para descanso. A casa é uma lembrança da arquitetura mineira, com o seu fogão à lenha e telhado colonial.</p>
+              <div class="projeto-meta">
+                <span>ARQUITETURA</span>
+                <span>|</span>
+                <span>RESIDENTIAL</span>
+                <span>|</span>
+                <span>2022</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Projeto 2 -->
+          <a href="projeto2.html" class="projeto-card">
+            <div class="projeto-img">
+              <img src="Imagens/projeto2.png" alt="Projeto 2">
+              <div class="projeto-overlay">
+                <span class="ver-mais">Ver Projeto →</span>
+              </div>
+            </div>
+            <div class="projeto-info">
+              <h2 class="projeto-titulo">APARTAMENTO 201</h2>
+              <p class="projeto-descricao">Nossos clientes tinham um belíssimo apartamento da década de 1980, o desafio era criar um projeto que integrasse os móveis antigos da família às novas peças contemporâneas.</p>
+              <div class="projeto-meta">
+                <span>ARQUITETURA</span>
+                <span>|</span>
+                <span>RESIDENTIAL</span>
+                <span>|</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Projeto 3 -->
+          <a href="projeto3.html" class="projeto-card">
+            <div class="projeto-img">
+              <img src="Imagens/projeto3.png" alt="Projeto 3">
+              <div class="projeto-overlay">
+                <span class="ver-mais">Ver Projeto →</span>
+              </div>
+            </div>
+            <div class="projeto-info">
+              <h2 class="projeto-titulo">CASA CORONEL</h2>
+              <p class="projeto-descricao">A Casa Coronel é um lugar onde a arquitetura e o design de interiores criam experiências. O desafio do projeto foi criar um design que não gerasse grandes alterações na casa.</p>
+              <div class="projeto-meta">
+                <span>ARQUITETURA</span>
+                <span>|</span>
+                <span>RESIDENTIAL</span>
+                <span>|</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+<!-- SEÇÃO STÚDIO -->
+<div id="STÚDIO">
+  <div class="container">
+    <div class="row">
+      <div class="STÚDIO-col-1">
+        <img src="Imagens/STÚDIO.png" alt="Stúdio Contraste Design">
+      </div>
+      <div class="STÚDIO-col-2">
+        <h1 class="sub-title">SOBRE</h1>
+        <p>Fundado por Jennifer Guimarães, o studio Contraste Design trabalha para trazer mais criatividade e memória para o ambiente construído. Como arquitetos e designers multidisciplinares, consideramos nosso trabalho como uma facilitação do bem-estar e do encontro com antigas memórias que ressoam nas pessoas e lugares únicos.</p>
+        
+        <p>Cada projeto – seja arquitetura, interiores ou produtos – exemplifica a busca pela essência do design, independente de sua escala ou localização, criando edifícios, espaços e objetos que se conectam com o desejo humano inato por pertencimento, autonomia e identidade.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- SEÇÃO CONTATO -->
+    <div id="contato">
+      <div class="container">
+        <div class="row">
+          <div class="contato-col-1">
+            <h1 class="sub-title">CONTATO</h1>
+            <p>Entre em contato conosco para transformar suas ideias em realidade. Estamos prontos para discutir seu próximo projeto e criar espaços únicos que reflitam sua visão.</p>
+            
+            <div class="contato-info">
+              <div class="info-item">
+                <h3>Email</h3>
+                <p>contrastedesign.jg@gmail.com</p>
+              </div>
+              
+              <div class="info-item">
+                <h3>Telefone</h3>
+                <p>+55 (32) 98488-8944</p>
+              </div>
+              
+              <div class="info-item">
+                <h3>Endereço</h3>
+                <p>Juiz de Fora, Minas Gerais</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+               <a href="https://www.instagram.com/contrastedesign.jg/" target="_blank" rel="noopener noreferrer">Instagram</a>
+               <a href="https://www.youtube.com/@contrastedesignjg" target="_blank" rel="noopener noreferrer">YouTube</a>
+               <a href="https://api.whatsapp.com/send/?phone=5532984888944&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+          
+          <div class="contato-col-2">
+            <img src="Imagens/CONTATO.png" alt="Contato Contraste Design">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Contraste Design</p>
+    </div>
+  </div>
+    
+    <!-- JAVASCRIPT -->
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      let autoSlideInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          dots[i].classList.remove('active');
+        });
+        
+        if (index >= slides.length) currentIndex = 0;
+        if (index < 0) currentIndex = slides.length - 1;
+        
+        slides[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+      }
+
+      function changeSlide(direction) {
+        currentIndex += direction;
+        showSlide(currentIndex);
+        resetAutoSlide();
+      }
+
+      function currentSlide(index) {
+        currentIndex = index;
+        showSlide(currentIndex);
+        resetAutoSlide();
+      }
+
+      function autoSlide() {
+        currentIndex++;
+        showSlide(currentIndex);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(autoSlide, 6000);
+      }
+
+      autoSlideInterval = setInterval(autoSlide, 6000);
+
+      document.querySelector('.slider').addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+
+      document.querySelector('.slider').addEventListener('mouseleave', () => {
+        resetAutoSlide();
+      });
+      
+      // Mudar cor do header ao rolar
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        const homeSection = document.getElementById('home');
+        const homeHeight = homeSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition >= homeHeight - 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }  
+      });
+
+    </script>
+<script>
+  // Código do slider que você já tem...
+  // (mantenha todo o código anterior)
+
+  // Código do scroll do header que você já tem...
+  // (mantenha todo o código anterior)
+
+  // NOVO: Código do menu mobile
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+  const menuOverlay = document.querySelector('.menu-overlay');
+  const menuLinks = document.querySelectorAll('nav ul li a');
+
+  // Abre/fecha o menu
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // Fecha o menu ao clicar no overlay
+  menuOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Fecha o menu ao clicar em um link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
+  </body>
+</html>
+
+jjaaa

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-books - Contraste Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<!-- HEADER -->
+<div id="header" class="scrolled">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">CONTRASTE DESIGN</a>
+      
+      <!-- Botão hambúrguer (apenas mobile) -->
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul>
+        <li><a href="index.html#home">HOME</a></li>
+        <li><a href="index.html#projetos">PROJETOS</a></li>
+        <li><a href="index.html#STÚDIO">STUDIO</a></li>
+        <li><a href="ebooks.html">E-BOOKS</a></li>
+        <li><a href="index.html#contato">CONTATO</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Overlay do menu (apenas mobile) -->
+<div class="menu-overlay"></div>
+
+    <!-- SEÇÃO E-BOOKS -->
+    <div id="ebooks">
+      <div id="ebooks-hero">
+        <div class="container">
+          <h1>PROCURANDO ALGO ESPECÍFICO?</h1>
+          <div class="search-box">
+            <input type="text" placeholder="Digite para buscar...">
+            <button>BUSCAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ebooks-content">
+        <div class="container">
+          <h2 class="ebooks-title">E-books por Tópico</h2>
+          
+          <div class="topics-grid">
+            <!-- Tópico 1: DESIGN DE INTERIORES -->
+            <div class="topic-column">
+              <h3 class="topic-title">DESIGN DE INTERIORES</h3>
+              <ul class="ebooks-list">
+                <li><a href="ebook-iluminacao.html">Guia Completo de Iluminação Residencial</a></li>
+                <li><a href="ebook-cores.html">Paleta de Cores: Como Escolher para Cada Ambiente</a></li>
+                <li><a href="ebook-minimalismo.html">Minimalismo na Prática: 10 Princípios Essenciais</a></li>
+              </ul>
+              <a href="#" class="read-more">
+                <span class="arrow">→</span> LER MAIS SOBRE DESIGN DE INTERIORES
+              </a>
+            </div>
+
+            <!-- Tópico 2: ARQUITETURA -->
+            <div class="topic-column">
+              <h3 class="topic-title">ARQUITETURA</h3>
+              <ul class="ebooks-list">
+                <li><a href="ebook-arquitetura-sustentavel.html">Arquitetura Sustentável: Tendências 2025</a></li>
+                <li><a href="ebook-materiais-naturais.html">Materiais Naturais na Construção Moderna</a></li>
+                <li><a href="ebook-integração-espaços.html">Integração de Espaços Internos e Externos</a></li>
+              </ul>
+              <a href="#" class="read-more">
+                <span class="arrow">→</span> LER MAIS SOBRE ARQUITETURA
+              </a>
+            </div>
+          </div>
+
+          <div class="topics-grid">
+            <!-- Tópico 3: ESTILO E DECORAÇÃO -->
+            <div class="topic-column">
+              <h3 class="topic-title">ESTILO E DECORAÇÃO</h3>
+              <ul class="ebooks-list">
+                <li><a href="ebook-artdeco.html">Truques para experimentar Art Deco</a></li>
+                <li><a href="#">Como Criar um Ambiente Acolhedor</a></li>
+                <li><a href="#">Tendências de Decoração para 2025</a></li>
+              </ul>
+              <a href="#" class="read-more">
+                <span class="arrow">→</span> LER MAIS SOBRE ESTILO E DECORAÇÃO
+              </a>
+            </div>
+
+            <!-- Tópico 4: PROJETOS RESIDENCIAIS -->
+            <div class="topic-column">
+              <h3 class="topic-title">PROJETOS RESIDENCIAIS</h3>
+              <ul class="ebooks-list">
+                <li><a href="#">Planejamento de Reforma: Passo a Passo</a></li>
+                <li><a href="#">Ambientes Pequenos: Soluções Inteligentes</a></li>
+                <li><a href="#">Home Office: Design e Produtividade</a></li>
+              </ul>
+              <a href="#" class="read-more">
+                <span class="arrow">→</span> LER MAIS SOBRE PROJETOS RESIDENCIAIS
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+      // Menu mobile
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('nav ul');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const menuLinks = document.querySelectorAll('nav ul li a');
+
+      // Abre/fecha o menu
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Fecha o menu ao clicar no overlay
+      menuOverlay.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // Fecha o menu ao clicar em um link
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    </script>
+  </body>
+</html>
+  </body>
+</html>
